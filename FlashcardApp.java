@@ -12,7 +12,7 @@ public class FlashcardApp extends JFrame {
     static class Flashcard {
         private final String outText;
         private final String hiddenText;
-    
+
         Flashcard(String outText, String hiddenText) {
             this.outText = outText;
             this.hiddenText = hiddenText;
@@ -25,7 +25,7 @@ public class FlashcardApp extends JFrame {
     static List<Flashcard> knownFlashcards = new ArrayList<>();
     static List<Flashcard> wrongFlashcards = new ArrayList<>();
     static List<Flashcard> tempWrongFlashcards = new ArrayList<>();
-    static JPanel flashcardText = new JPanel(new GridLayout(3,5));
+    static JPanel flashcardText = new JPanel(new GridLayout(3, 5));
     static JLabel outTextLabel = new JLabel("");
     static JLabel hiddenTextLabel = new JLabel("");
     static JPanel bottomTextPanel = new JPanel(new GridLayout(1, 3));
@@ -254,7 +254,8 @@ public class FlashcardApp extends JFrame {
         int rightAnswers = knownFlashcards.size();
         int totalFlashcards = flashcards.size();
 
-        outTextLabel.setText("Good job, you finished the deck, getting " + rightAnswers + " out of " + totalFlashcards + " correct!");
+        outTextLabel.setText("Good job, you finished the deck, getting " + rightAnswers + " out of " + totalFlashcards
+                + " correct!");
         restartPanel.setVisible(true);
         hiddenTextLabel.setText("");
         revealHiddenTextButton.setForeground(new Color(0, 0, 0, 0));
@@ -272,7 +273,8 @@ public class FlashcardApp extends JFrame {
             outTextLabel.setText("🎉 You've mastered all the flashcards!");
         } else {
             int totalReviewed = lastReviewCorrectCount + wrongFlashcards.size();
-            outTextLabel.setText("Great job, you got " + lastReviewCorrectCount + " out of " + totalReviewed + " correct!");
+            outTextLabel
+                    .setText("Great job, you got " + lastReviewCorrectCount + " out of " + totalReviewed + " correct!");
         }
 
         restartPanel.setVisible(true);
